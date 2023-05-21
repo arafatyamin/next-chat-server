@@ -42,10 +42,8 @@ io.on("connection", (socket) => {
   });
 
   socket.on('chatmessage', msg => {
-    console.log(msg)
     const message = new Msg({ msg });
     message.save().then((data) => {
-      console.log(data)
       io.emit('message', data)
   })
 
