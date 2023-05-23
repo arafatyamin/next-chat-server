@@ -11,12 +11,19 @@ app.use(cors());
 
 const httpServer = http.createServer(app);
 const {Server} = require("socket.io");
-const io = new Server(httpServer, {
-    cors: {
-        origin: "https://next-chat-io.netlify.app/",
-        // origin: "http://localhost:3000",
-        method: ["GET", "POST"],
-    },
+// const io = new Server(httpServer, {
+//     cors: {
+//         origin: "https://next-chat-io.netlify.app/",
+//     },
+// });
+
+const io = socket(server, {
+  pingTimeout: 6000,
+  cors: {
+    "Access-Control-Allow-Origin": "*",
+    origin: "https://next-chat-io.netlify.app/",
+    // credentials: true,
+  },
 });
 
 
