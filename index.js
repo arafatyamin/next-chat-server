@@ -13,8 +13,8 @@ const httpServer = http.createServer(app);
 const {Server} = require("socket.io");
 const io = new Server(httpServer, {
     cors: {
-        // origin: "https://next-chat-io.netlify.app/",
-        origin: "http://localhost:3000",
+        origin: "https://next-chat-io.netlify.app/",
+        // origin: "http://localhost:3000",
         method: ["GET", "POST"],
     },
 });
