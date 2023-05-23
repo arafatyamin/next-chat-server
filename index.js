@@ -17,7 +17,7 @@ const {Server} = require("socket.io");
 //     },
 // });
 
-const io = socket(server, {
+const io = new Server(httpServer, {
   pingTimeout: 6000,
   cors: {
     "Access-Control-Allow-Origin": "*",
