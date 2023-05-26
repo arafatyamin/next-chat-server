@@ -21,8 +21,8 @@ const io = new Server(httpServer, {
   pingTimeout: 6000,
   cors: {
     "Access-Control-Allow-Origin": "*",
-    origin: "https://next-chat-io.netlify.app/",
-    // credentials: true,
+    origin: "https://next-chat-client-hwu2.vercel.app/",
+    credentials: true,
   },
 });
 
